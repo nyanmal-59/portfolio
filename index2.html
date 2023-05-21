@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="js/jquery.pause.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        loop_slide("up");
+        loop_slide("down");
+
+        function loop_slide(direction = "down") {
+          var setElm = $(".loopSlider_" + direction),
+            slideSpeed = 4000;
+
+          setElm.each(function () {
+            var self = $(this),
+              selfHeight = self.innerHeight(),
+              findUl = self.find("ul"),
+              findLi = findUl.find("li"),
+              listHeight = findLi.outerHeight(),
+              listCount = findLi.length,
+              loopHeight = listHeight * listCount;
+
+            findUl.wrap('<div class="loopSliderWrap_' + direction + '"></div>');
+            var selfWrap = self.find(".loopSliderWrap_" + direction);
+
+            if (loopHeight > selfHeight) {
+              findUl.css({ height: loopHeight }).clone().appendTo(selfWrap);
+
+              selfWrap.css({ height: loopHeight * 2 });
+
+              function loopMove() {
+                var loop = { top: "-" + loopHeight + "px" };
+                if (direction == "down") {
+                  loop = { bottom: "-" + loopHeight + "px" };
+                }
+                selfWrap.animate(
+                  loop,
+                  {
+                    duration: slideSpeed * listCount,
+                    easing: "linear",
+                    queue: false,
+                  },
+                  function () {
+                    selfWrap.css({ bottom: "0" });
+                    loopMove();
+                  }
+                );
+              }
+              loopMove();
+
+              selfWrap.hover(
+                function () {
+                  $(this).stop();
+                },
+                function () {
+                  loopMove();
+                }
+              );
+            }
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="content">
+      <section>
+        <header>
+          <div class="section_circle"></div>
+          <div class="section_bar">
+            <ul>
+              目次
+            </ul>
+            <ul>
+              <input id="section_menu" type="checkbox" />
+              <label for="section_menu" class="open">
+                <span></span><span></span><span></span
+              ></label>
+              <label for="section_menu" class="back"></label>
+              <aside>
+                <label for="section_menu" class="close">×</label>
+
+                <ul>
+                  <li>料金表</li>
+                  <li>ご予約</li>
+                  <li>お知らせ</li>
+                  <li>list4</li>
+                  <li>list5</li>
+                </ul>
+              </aside>
+            </ul>
+          </div>
+        </header>
+        <h1>Night tour</h1>
+        <div class="block_start">
+          <p class="start">Let's start</p>
+        </div>
+      </section>
+      <div class="about">
+        <h2>About</h2>
+        <p class="text">
+          文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります
+          文章が入ります文章が入ります文章が入ります文章が入ります<br />
+
+          文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります
+        </p>
+        <div class="block_loop">
+          <div class="loopSlider_up">
+            <ul>
+              <li>
+                <a href="#"
+                  ><img
+                    src="image/huper-by-joshua-earle-4yBogrmcEmM-unsplash.jpg"
+                    alt=""
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="image/ryan-klaus-9E6WiTD8Qk8-unsplash.jpg" alt=""
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img
+                    src="image/jonathan-forage-1azAjl8FTnU-unsplash.jpg"
+                    alt=""
+                /></a>
+              </li>
+            </ul>
+          </div>
+          <div class="loopSlider_down">
+            <ul>
+              <li>
+                <a href="#"
+                  ><img
+                    src="image/boris-bobrov-8tWsZzZoPJ8-unsplash.jpg"
+                    alt=""
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img
+                    src="image/conner-baker-bEX9z0Y4ZAI-unsplash.jpg"
+                    alt=""
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img
+                    src="image/dawid-zawila--G3rw6Y02D0-unsplash.jpg"
+                    alt=""
+                /></a>
+              </li>
+            </ul>
+          </div>
+          <div class="block_text">
+            <p>
+              あしらいが入りますあしらいが入りますあしらいが入りますあしらいが入りますあしらいが入ります
+            </p>
+          </div>
+        </div>
+      </div>
+      <main>
+        <div class="main_weather">
+          <div class="main_left">
+            <p>本日の予想満点率</p>
+            <p>UPDATE/2023.4.16</p>
+          </div>
+          <div class="main_right">
+            <p class="main_random">75%</p>
+          </div>
+        </div>
+
+        <h2>Tour schedule</h2>
+        <div class="block_tour">
+          <div class="block_belongings">
+            <p class="title">持ち物</p>
+            <ul>
+              参加費（大人 : 2800円　子供 ： 1000円）
+            </ul>
+            <p>おすすめの持ち物</p>
+            <ul>
+              防寒着
+            </ul>
+            <ul>
+              防寒着対策グッズ
+            </ul>
+            <ul>
+              懐中電灯
+            </ul>
+          </div>
+          <div class="block_Assembly_point">
+            <p class="title">集合場所</p>
+            <ul>
+              八山山岳入口　19:30
+            </ul>
+            <ul>
+              ロープウェイ移動　19:45
+            </ul>
+            <ul>
+              天体観測　20:00～21:30
+            </ul>
+            <p>終了</p>
+          </div>
+          <div class="block_attention">
+            <p class="title">注意事項</p>
+            <p>
+              文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります
+              文章が入ります文章が入ります文章が入ります文章が入ります
+            </p>
+          </div>
+          <div class="block_clothing">
+            <p class="title">服装・靴</p>
+            <p>
+              文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります
+              文章が入ります文章が入ります文章が入ります文章が入ります
+            </p>
+          </div>
+          <div class="box_cancel">
+            <p class="title">キャンセル</p>
+            <p>
+              文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります
+              文章が入ります文章が入ります文章が入ります文章が入ります
+            </p>
+          </div>
+          <div class="box_finish">
+            <p class="title">最後に</p>
+            <p>
+              文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります
+              文章が入ります文章が入ります文章が入ります文章が入ります
+            </p>
+          </div>
+          <figure>
+            <img src="image/1535949886-2.png" alt="宇宙の惑星b" />
+          </figure>
+        </div>
+      </main>
+      <div class="gallery">
+        <figure>
+          <img src="image/pexels-jakub-novacek-924824.jpg" alt="" />
+        </figure>
+        <figure>
+          <img src="image/pexels-marek-piwnicki-6160167.jpg" alt="" />
+        </figure>
+        <figure>
+          <img src="image/jon-tyson-SN4Hu4v1a0M-unsplash.jpg" alt="" />
+        </figure>
+        <figure>
+          <img src="image/sanni-sahil-cSm2a_-25YU-unsplash.jpg" alt="" />
+        </figure>
+        <figure>
+          <img
+            src="image/huper-by-joshua-earle-4yBogrmcEmM-unsplash.jpg"
+            alt=""
+          />
+        </figure>
+        <figure>
+          <img src="image/boris-bobrov-8tWsZzZoPJ8-unsplash.jpg" alt="" />
+        </figure>
+        <figure>
+          <img src="image/pexels-chait-goli-2666598.jpg" alt="" />
+        </figure>
+        <figure>
+          <img src="image/dawid-zawila--G3rw6Y02D0-unsplash.jpg" alt="" />
+        </figure>
+      </div>
+      <div class="contact">
+        <p class="title">Contact</p>
+        <p class="text">
+          文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります
+          <br /><br />文章が入ります文章が入ります文章が入ります文章が入ります
+        </p>
+        <div class="block_contact">
+          <p class="title">FAQ</p>
+        </div>
+        <div class="block_contact">
+          <p class="title">contact</p>
+        </div>
+        <footer>
+          <figure>
+            <img src="image/icons8-インスタグラム-64.png" alt="" />
+          </figure>
+
+          <figure>
+            <img src="image/icons8-ツイッター-50 (2).png" alt="" />
+          </figure>
+        </footer>
+        <div class="figcaption">
+          <figcaption>
+            <a
+              target="_blank"
+              href="https://icons8.com/icon/32320/%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%82%B0%E3%83%A9%E3%83%A0"
+              >インスタグラム</a
+            >
+            icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+          </figcaption>
+          <figcaption>
+            <a
+              target="_blank"
+              href="https://icons8.com/icon/437/%E3%83%84%E3%82%A4%E3%83%83%E3%82%BF%E3%83%BC"
+              >ツイッター</a
+            >
+            icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+          </figcaption>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

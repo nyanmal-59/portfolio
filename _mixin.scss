@@ -1,0 +1,8 @@
+@mixin animation($name, $duration: 5s, $count: infinite, $timing: liner) {
+  animation: {
+    name: $name;
+    duration: $duration;
+    iteration-count: $count;
+    timing-function: $timing;
+  }
+}
