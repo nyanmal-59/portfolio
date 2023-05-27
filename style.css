@@ -110,7 +110,7 @@ section header .section_bar input[type=checkbox]:checked ~ .back {
   top: 0;
   left: 0;
   width: 100%;
-  height: 370vh;
+  height: 100%;
   background-color: #34485e;
   transition: all 0.4s;
   z-index: 10;
@@ -176,7 +176,7 @@ section .block_start .start {
   overflow: hidden;
 }
 .about .block_loop .loopSlider_up ul li img {
-  width: 100%;
+  width: 200%;
   height: 200px;
 }
 .about .block_loop .loopSliderWrap_down {
@@ -204,7 +204,7 @@ section .block_start .start {
   overflow: hidden;
 }
 .about .block_loop .loopSlider_down ul li img {
-  width: 100%;
+  width: 200%;
   height: 200px;
 }
 .about .block_loop .block_text {
@@ -258,7 +258,7 @@ main {
 .block_tour figure {
   width: 140px;
   margin: 0 auto;
-  padding: 60px 25px 100px 0;
+  padding: 60px 25px 100px 25px;
 }
 .block_tour figure img {
   width: 100%;
@@ -298,6 +298,13 @@ main {
   width: 320px;
   margin: 30px 0 5px 0;
   border-bottom: 1px solid #707070;
+}
+.contact a {
+  text-decoration: none;
+  color: #fff;
+}
+.contact a:hover {
+  cursor: pointer;
 }
 
 footer {

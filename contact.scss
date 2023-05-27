@@ -1,0 +1,155 @@
+.content {
+  width: 375px;
+  height: auto;
+  margin: 0 auto;
+}
+@mixin font-style {
+  font-family: ten-mincho-text, serif;
+  font-style: normal;
+  font-weight: 400;
+}
+h1 {
+  font-size: 24px;
+  @include font-style;
+}
+h2 {
+  font-size: 18px;
+  @include font-style;
+  color: #fff;
+  margin: 0;
+  padding: 60px 0 10px 25px;
+}
+
+p {
+  font-size: 13px;
+  @include font-style;
+}
+section {
+  width: 375px;
+  height: 810px;
+  background-image: url(image/klemen-vrankar-lcT_p8kLCsc-unsplash.jpg);
+  background-size: cover;
+  background-position: 20%;
+  color: #fff;
+  position: relative;
+  & header {
+    display: flex;
+    justify-content: space-around;
+    height: 60px;
+    line-height: 30px;
+    & .section_circle {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: #fff;
+      margin-top: 10px;
+    }
+    & .section_bar {
+      display: flex;
+
+      input[type="checkbox"] {
+        position: absolute;
+        top: -20vh;
+      }
+      .open {
+        position: absolute;
+      }
+      & ul {
+        font-size: 16px;
+        font-family: ten-mincho-text, serif;
+        font-style: normal;
+        font-weight: 400;
+        & span {
+          display: block;
+          flex-flow: column;
+          width: 20px;
+          height: 2px;
+          margin-bottom: 5px;
+          background-color: #fff;
+          &:nth-child(3) {
+            margin-bottom: none;
+          }
+          &:nth-child(1) {
+            margin-top: 6px;
+          }
+        }
+      }
+      & aside {
+        position: absolute;
+        top: -250px;
+        left: 0;
+        height: 250px;
+        transition: all 0.4s;
+        & ul {
+          list-style-type: none;
+          width: 375px;
+          & li {
+            width: 300px;
+            border-bottom: 1px solid #fff;
+          }
+        }
+      }
+      input[type="checkbox"]:checked ~ aside {
+        top: 50px;
+        left: 0;
+        z-index: 20;
+        transition: all 0.4s;
+      }
+      input[type="checkbox"]:checked ~ .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #34485e;
+        transition: all 0.4s;
+        z-index: 10;
+        opacity: 0.8;
+      }
+    }
+  }
+  & h1 {
+    margin: -15px 20px;
+  }
+
+  & .wrapper {
+    @include font-style;
+    width: inherit;
+    height: 100px;
+    margin: 100px 0 0 25px;
+    line-height: 35px;
+    & input[type="text"],input[type = "email"],textarea {
+        background: #fff;
+        opacity: 0.5;
+        border-radius: 5px;
+        border: 1px solid #fff;
+        font-size: 1.2rem;
+        width: 80%;
+        height: 30px;
+    }
+    & textarea {
+        height: 6rem;
+    }
+    & input[type="submit"] {
+        border: none;
+        cursor: pointer;
+        line-height: 2;
+        width: 80px;
+        @include font-style;
+        background-color: #cf8f30;
+        color: #fff;
+        border-radius: 5px;
+    }
+  }
+  & .block_start {
+    width: 15px;
+    height: 200px;
+    border-right: 2px solid #fff;
+    transform: translateY(150%);
+    .start {
+      writing-mode: vertical-rl;
+      padding-left: 5px;
+      font-size: 16px;
+    }
+  }
+}

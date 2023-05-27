@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>問い合わせフォーム</title>
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+  <body>
+    <div class="content">
+      <section>
+        <header>
+          <div class="section_circle"></div>
+          <div class="section_bar">
+            <ul>
+              <input id="section_menu" type="checkbox" />
+              <label for="section_menu" class="open">
+                <span></span><span></span><span></span
+              ></label>
+              <label for="section_menu" class="back"></label>
+              <aside>
+                <label for="section_menu" class="close">×</label>
+
+                <ul>
+                  <li>料金表</li>
+                  <li>ご予約</li>
+                  <li>お知らせ</li>
+                </ul>
+              </aside>
+            </ul>
+          </div>
+        </header>
+          <h1>Night tour</h1>
+        <div class="wrapper">
+          <form action="#" method="POST">
+            <label for="name">名前:</label><br>
+            <input type="text" id="name" name="name" required />
+            <br />
+            <label for="email">メールアドレス:</label><br>
+            <input type="email" id="email" name="email" required />
+            <br />
+            <label for="message">メッセージ:</label><br>
+            <textarea id="message" name="message" required></textarea>
+            <br />
+            <input type="submit" value="送信" />
+          </form>
+        </div>
+        <div class="block_start">
+          <p class="start">Let's start</p>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

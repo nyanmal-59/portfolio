@@ -60,7 +60,9 @@
                   $(this).stop();
                 },
                 function () {
-                  loopMove();
+                  if (!$(this).is(":animated")) {
+                    loopMove();
+                  }
                 }
               );
             }
@@ -111,8 +113,6 @@
                   <li>料金表</li>
                   <li>ご予約</li>
                   <li>お知らせ</li>
-                  <li>list4</li>
-                  <li>list5</li>
                 </ul>
               </aside>
             </ul>
@@ -305,7 +305,7 @@
           <p class="title">FAQ</p>
         </div>
         <div class="block_contact">
-          <p class="title">contact</p>
+          <a href="contact.html" class="title"><p>Contact</p></a>
         </div>
         <footer>
           <figure>

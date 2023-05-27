@@ -1,0 +1,161 @@
+.content {
+  width: 375px;
+  height: auto;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 24px;
+  font-family: ten-mincho-text, serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 18px;
+  font-family: ten-mincho-text, serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+  padding: 60px 0 10px 25px;
+}
+
+p {
+  font-size: 13px;
+  font-family: ten-mincho-text, serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+section {
+  width: 375px;
+  height: 810px;
+  background-image: url(image/klemen-vrankar-lcT_p8kLCsc-unsplash.jpg);
+  background-size: cover;
+  background-position: 20%;
+  color: #fff;
+  position: relative;
+}
+section header {
+  display: flex;
+  justify-content: space-around;
+  height: 60px;
+  line-height: 30px;
+}
+section header .section_circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin-top: 10px;
+}
+section header .section_bar {
+  display: flex;
+}
+section header .section_bar input[type=checkbox] {
+  position: absolute;
+  top: -20vh;
+}
+section header .section_bar .open {
+  position: absolute;
+}
+section header .section_bar ul {
+  font-size: 16px;
+  font-family: ten-mincho-text, serif;
+  font-style: normal;
+  font-weight: 400;
+}
+section header .section_bar ul span {
+  display: block;
+  flex-flow: column;
+  width: 20px;
+  height: 2px;
+  margin-bottom: 5px;
+  background-color: #fff;
+}
+section header .section_bar ul span:nth-child(3) {
+  margin-bottom: none;
+}
+section header .section_bar ul span:nth-child(1) {
+  margin-top: 6px;
+}
+section header .section_bar aside {
+  position: absolute;
+  top: -250px;
+  left: 0;
+  height: 250px;
+  transition: all 0.4s;
+}
+section header .section_bar aside ul {
+  list-style-type: none;
+  width: 375px;
+}
+section header .section_bar aside ul li {
+  width: 300px;
+  border-bottom: 1px solid #fff;
+}
+section header .section_bar input[type=checkbox]:checked ~ aside {
+  top: 50px;
+  left: 0;
+  z-index: 20;
+  transition: all 0.4s;
+}
+section header .section_bar input[type=checkbox]:checked ~ .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #34485e;
+  transition: all 0.4s;
+  z-index: 10;
+  opacity: 0.8;
+}
+section h1 {
+  margin: -15px 20px;
+}
+section .wrapper {
+  font-family: ten-mincho-text, serif;
+  font-style: normal;
+  font-weight: 400;
+  width: inherit;
+  height: 100px;
+  margin: 100px 0 0 25px;
+  line-height: 35px;
+}
+section .wrapper input[type=text], section .wrapper input[type=email], section .wrapper textarea {
+  background: #fff;
+  opacity: 0.5;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  font-size: 1.2rem;
+  width: 80%;
+  height: 30px;
+}
+section .wrapper textarea {
+  height: 6rem;
+}
+section .wrapper input[type=submit] {
+  border: none;
+  cursor: pointer;
+  line-height: 2;
+  width: 80px;
+  font-family: ten-mincho-text, serif;
+  font-style: normal;
+  font-weight: 400;
+  background-color: #cf8f30;
+  color: #fff;
+  border-radius: 5px;
+}
+section .block_start {
+  width: 15px;
+  height: 200px;
+  border-right: 2px solid #fff;
+  transform: translateY(150%);
+}
+section .block_start .start {
+  writing-mode: vertical-rl;
+  padding-left: 5px;
+  font-size: 16px;
+}/*# sourceMappingURL=contact.css.map */
