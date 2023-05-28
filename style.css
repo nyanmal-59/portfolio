@@ -263,6 +263,48 @@ main {
 .block_tour figure img {
   width: 100%;
 }
+.block_tour .block_Assembly_point {
+  position: relative;
+  z-index: 10;
+}
+.block_tour .block_Assembly_point::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  bottom: -10px;
+  left: -25px;
+  background-color: #35393e;
+  z-index: -1;
+}
+.block_tour .block_clothing {
+  position: relative;
+  z-index: 10;
+}
+.block_tour .block_clothing::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  bottom: -10px;
+  left: -25px;
+  background-color: #35393e;
+  z-index: -1;
+}
+.block_tour .block_finish {
+  position: relative;
+  z-index: 10;
+}
+.block_tour .block_finish::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  bottom: -10px;
+  left: -25px;
+  background-color: #35393e;
+  z-index: -1;
+}
 
 .gallery {
   display: grid;
