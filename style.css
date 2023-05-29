@@ -95,6 +95,11 @@ section header .section_bar aside ul {
   list-style-type: none;
   width: 375px;
 }
+section header .section_bar aside ul a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointe;
+}
 section header .section_bar aside ul li {
   width: 300px;
   border-bottom: 1px solid #fff;
@@ -261,6 +266,22 @@ main {
   padding: 60px 25px 100px 25px;
 }
 .block_tour figure img {
+  width: 100%;
+}
+.block_tour .eyecatch_1 {
+  transform: translateX(-25px);
+  width: 325px;
+  height: auto;
+}
+.block_tour .eyecatch_1 img {
+  width: 100%;
+}
+.block_tour .eyecatch_2 {
+  transform: translateX(-25px);
+  width: 325px;
+  height: auto;
+}
+.block_tour .eyecatch_2 img {
   width: 100%;
 }
 
