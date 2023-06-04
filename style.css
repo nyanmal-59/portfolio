@@ -356,4 +356,17 @@ figcaption {
 figcaption a {
   color: #fff;
   text-decoration: none;
+}
+
+@media screen and (min-width: 800px) {
+  .content {
+    display: grid;
+    grid-template: "... header header ..." auto "... about block_loop ..." auto "... weather weather ..." auto "... assembly_point eyecatch_1 ..." auto "... eyecatch_2 attention ..." auto "... clothing eyecatch_3 ..." auto "... cancel cancel ..." auto "... finish universe ..." auto/auto minmax(800px, 1200px) auto auto;
+  }
+  .content section {
+    min-width: 600px;
+  }
+  .content header {
+    grid-area: header;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -239,7 +239,6 @@ main {
       font-size: 24px;
     }
   }
- 
 }
 
 .block_tour {
@@ -263,8 +262,8 @@ main {
       width: 100%;
     }
   }
- & .eyecatch_1 {
-  transform: translateX(-25px);
+  & .eyecatch_1 {
+    transform: translateX(-25px);
     width: 325px;
     height: auto;
     & img {
@@ -273,13 +272,12 @@ main {
   }
   & .eyecatch_2 {
     transform: translateX(-25px);
-      width: 325px;
-      height: auto;
-      & img {
-        width: 100%;
-      }
+    width: 325px;
+    height: auto;
+    & img {
+      width: 100%;
     }
-
+  }
 }
 
 .gallery {
@@ -351,4 +349,27 @@ figcaption {
     color: #fff;
     text-decoration: none;
   }
+}
+@media screen and (min-width: 800px) {
+  .content {
+    display: grid;
+    grid-template:
+      "... header header ..." auto
+      "... about block_loop ..." auto
+      "... weather weather ..." auto
+      "... assembly_point eyecatch_1 ..." auto
+      "... eyecatch_2 attention ..." auto
+      "... clothing eyecatch_3 ..." auto
+      "... cancel cancel ..." auto
+      "... finish universe ..." auto
+      / auto minmax(800px, 1200px) auto auto;
+& section {
+  min-width: 600px;
+}
+      & header {
+        grid-area: header;
+
+      }
+  }
+
 }

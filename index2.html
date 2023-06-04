@@ -95,6 +95,48 @@
     </script>
   </head>
   <body>
+    <script>
+      function updateElementContent() {
+        var targetElements = document.getElementsByClassName("section_bar");
+        for (var i = 0; i < targetElements.length; i++) {
+          if (window.innerWidth <= 800) {
+            targetElements[i].innerHTML = ` 
+              <aside>
+                <ul>
+                  <a href="index2.html"><li>Home</li></a>
+                  <a href="#"><li>料金表</li></a>
+                  <a href="#"><li>ご予約</li></a>
+                  <a href="#"><li>お知らせ</li></a>
+                </ul>
+              </aside>
+            `;
+          } else {
+            targetElements[i].innerHTML = ` 
+              <div class="section_bar">
+                <ul>
+                  <input id="section_menu" type="checkbox" />
+                  <label for="section_menu" class="open">
+                    <span></span><span></span><span></span>
+                  </label>
+                  <label for="section_menu" class="back"></label>
+                  <aside>
+                    <label for="section_menu" class="close">×</label>
+                    <ul>
+                      <a href="index2.html"><li>Home</li></a>
+                      <a href="#"><li>料金表</li></a>
+                      <a href="#"><li>ご予約</li></a>
+                      <a href="#"><li>お知らせ</li></a>
+                    </ul>
+                  </aside>
+                </ul>
+              </div>
+            `;
+          }
+        }
+      }
+    
+      window.addEventListener("resize", updateElementContent);
+    </script>
     <div class="content">
       <section>
         <header>
@@ -250,10 +292,10 @@
             </p>
           </div>
           <figure class="eyecatch_2">
-            <img src="image/justin-main-UBbvKkbAClE-unsplash.jpg" alt=靴のイメージ">
+            <img src="image/justin-main-UBbvKkbAClE-unsplash.jpg"
+            alt=靴のイメージ">
           </figure>
           <div class="box_cancel">
-
             <p class="title">キャンセル</p>
             <p>
               キャンセルに関するご案内：
@@ -266,7 +308,7 @@
             </p>
           </div>
           <figure class="eyecatch_3">
-            <img src="image/22987497.png" alt="望遠鏡">
+            <img src="image/22987497.png" alt="望遠鏡" />
           </figure>
 
           <div class="block_finish">
