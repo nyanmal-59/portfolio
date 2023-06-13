@@ -32,6 +32,7 @@ section {
   height: 810px;
   background-image: url(image/klemen-vrankar-lcT_p8kLCsc-unsplash.jpg);
   background-size: cover;
+  background-position: bottom;
   background-position: 20%;
   color: #fff;
   position: relative;
@@ -69,11 +70,12 @@ section {
           height: 2px;
           margin-bottom: 5px;
           background-color: #fff;
-          &:nth-child(3) {
-            margin-bottom: none;
-          }
+
           &:nth-child(1) {
             margin-top: 6px;
+          }
+          &:nth-child(3) {
+            margin-bottom: none;
           }
         }
       }
@@ -98,9 +100,21 @@ section {
         }
       }
       input[type="checkbox"]:checked ~ aside {
-        top: 50px;
+        top: 100px;
         left: 0;
         z-index: 20;
+        transition: all 0.4s;
+      }
+      input[type="checkbox"]:checked + label span:nth-child(1) {
+        transform: rotate(45deg) translate(0, 5px);
+        transition: all 0.4s;
+      }
+      input[type="checkbox"]:checked + label span:nth-child(2) {
+        display: none;
+        transition: all 0.4s;
+      }
+      input[type="checkbox"]:checked + label span:nth-child(3) {
+        transform: rotate(-45deg) translate(0, -5px);
         transition: all 0.4s;
       }
       input[type="checkbox"]:checked ~ .back {
@@ -351,25 +365,65 @@ figcaption {
   }
 }
 @media screen and (min-width: 800px) {
+  body {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  }
   .content {
     display: grid;
+    
     grid-template:
-      "... header header ..." auto
-      "... about block_loop ..." auto
-      "... weather weather ..." auto
-      "... assembly_point eyecatch_1 ..." auto
-      "... eyecatch_2 attention ..." auto
-      "... clothing eyecatch_3 ..." auto
-      "... cancel cancel ..." auto
-      "... finish universe ..." auto
-      / auto minmax(800px, 1200px) auto auto;
-& section {
-  min-width: 600px;
-}
+      "... header..."
+      "... about ..."
+      "... main ..."
+      "... gallery  ..."
+      "... contact  ..."
+      / auto minmax(800px, 3000px) auto;
+
+    & section {
+      grid-area: header;
+      min-width: 800px;
+      max-width: 3000px;
+      background-position: bottom;
       & header {
-        grid-area: header;
-
+        display: flex;
+        justify-content: space-between;
+        & .section_bar aside {
+          width: 20px;
+          top: 50px;
+          left: 500px;
+          width: 100px;
+          display: flex;
+          justify-content: space-around;
+        }
+        & ul .menu-items {
+          width: 200px;
+          height: 100px;
+          display: flex;
+          justify-content: space-around;
+          & li {
+            width: 150px;
+          }
+        }
+       
       }
-  }
+      .section_bar .open > span {
+        display: none;
+      }
+    }
+    & .about {
+      grid-area: about;
+    }
 
+    & main {
+      grid-area: main;
+    }
+    & .gallery {
+      grid-area: gallery;
+    }
+    & .contact {
+      grid-area: contact;
+    }
+  }
 }

@@ -37,6 +37,7 @@ section {
   height: 810px;
   background-image: url(image/klemen-vrankar-lcT_p8kLCsc-unsplash.jpg);
   background-size: cover;
+  background-position: bottom;
   background-position: 20%;
   color: #fff;
   position: relative;
@@ -78,11 +79,11 @@ section header .section_bar ul span {
   margin-bottom: 5px;
   background-color: #fff;
 }
-section header .section_bar ul span:nth-child(3) {
-  margin-bottom: none;
-}
 section header .section_bar ul span:nth-child(1) {
   margin-top: 6px;
+}
+section header .section_bar ul span:nth-child(3) {
+  margin-bottom: none;
 }
 section header .section_bar aside {
   position: absolute;
@@ -105,9 +106,21 @@ section header .section_bar aside ul li {
   border-bottom: 1px solid #fff;
 }
 section header .section_bar input[type=checkbox]:checked ~ aside {
-  top: 50px;
+  top: 100px;
   left: 0;
   z-index: 20;
+  transition: all 0.4s;
+}
+section header .section_bar input[type=checkbox]:checked + label span:nth-child(1) {
+  transform: rotate(45deg) translate(0, 5px);
+  transition: all 0.4s;
+}
+section header .section_bar input[type=checkbox]:checked + label span:nth-child(2) {
+  display: none;
+  transition: all 0.4s;
+}
+section header .section_bar input[type=checkbox]:checked + label span:nth-child(3) {
+  transform: rotate(-45deg) translate(0, -5px);
   transition: all 0.4s;
 }
 section header .section_bar input[type=checkbox]:checked ~ .back {
@@ -359,14 +372,55 @@ figcaption a {
 }
 
 @media screen and (min-width: 800px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .content {
     display: grid;
-    grid-template: "... header header ..." auto "... about block_loop ..." auto "... weather weather ..." auto "... assembly_point eyecatch_1 ..." auto "... eyecatch_2 attention ..." auto "... clothing eyecatch_3 ..." auto "... cancel cancel ..." auto "... finish universe ..." auto/auto minmax(800px, 1200px) auto auto;
+    grid-template: "... header..." "... about ..." "... main ..." "... gallery  ..." "... contact  ..."/auto minmax(800px, 3000px) auto;
   }
   .content section {
-    min-width: 600px;
-  }
-  .content header {
     grid-area: header;
+    min-width: 800px;
+    max-width: 3000px;
+    background-position: bottom;
+  }
+  .content section header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .content section header .section_bar aside {
+    width: 20px;
+    top: 50px;
+    left: 500px;
+    width: 100px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .content section header ul .menu-items {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .content section header ul .menu-items li {
+    width: 150px;
+  }
+  .content section .section_bar .open > span {
+    display: none;
+  }
+  .content .about {
+    grid-area: about;
+  }
+  .content main {
+    grid-area: main;
+  }
+  .content .gallery {
+    grid-area: gallery;
+  }
+  .content .contact {
+    grid-area: contact;
   }
 }/*# sourceMappingURL=style.css.map */
