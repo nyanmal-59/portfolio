@@ -371,7 +371,7 @@ figcaption a {
   text-decoration: none;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   body {
     display: flex;
     justify-content: center;
@@ -379,13 +379,18 @@ figcaption a {
   }
   .content {
     display: grid;
-    grid-template: "... header..." "... about ..." "... main ..." "... gallery  ..." "... contact  ..."/auto minmax(800px, 3000px) auto;
+    min-width: 900px;
+    max-width: 1680px;
+    width: auto;
+    grid-template: "... header..." "... about ..." "... main ..." "... gallery  ..." "... contact  ..."/50px auto 50px;
   }
   .content section {
+    width: auto;
     grid-area: header;
-    min-width: 800px;
-    max-width: 3000px;
     background-position: bottom;
+  }
+  .content section h1 {
+    margin: 0 20px;
   }
   .content section header {
     display: flex;
@@ -394,16 +399,21 @@ figcaption a {
   .content section header .section_bar aside {
     width: 20px;
     top: 50px;
-    left: 500px;
     width: 100px;
     display: flex;
     justify-content: space-around;
+    position: relative;
+  }
+  .content section header .section_circle {
+    margin: 20px 0 0 60px;
   }
   .content section header ul .menu-items {
     width: 200px;
     height: 100px;
+    right: 230px;
     display: flex;
     justify-content: space-around;
+    position: absolute;
   }
   .content section header ul .menu-items li {
     width: 150px;
@@ -413,6 +423,14 @@ figcaption a {
   }
   .content .about {
     grid-area: about;
+    display: flex;
+  }
+  .content .about_block {
+    flex-basis: 30%;
+  }
+  .content .about .block_loop {
+    flex-basis: 70%;
+    max-width: 500px;
   }
   .content main {
     grid-area: main;

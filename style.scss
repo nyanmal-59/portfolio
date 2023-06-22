@@ -364,49 +364,58 @@ figcaption {
     text-decoration: none;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   body {
     display: flex;
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
   }
   .content {
     display: grid;
-    
+    min-width: 900px;
+    max-width: 1680px;
+    width: auto;
+
     grid-template:
       "... header..."
       "... about ..."
       "... main ..."
       "... gallery  ..."
       "... contact  ..."
-      / auto minmax(800px, 3000px) auto;
+      / 50px auto 50px;
 
     & section {
+      width: auto;
       grid-area: header;
-      min-width: 800px;
-      max-width: 3000px;
       background-position: bottom;
+      & h1 {
+        margin: 0 20px;
+      }
       & header {
         display: flex;
         justify-content: space-between;
         & .section_bar aside {
           width: 20px;
           top: 50px;
-          left: 500px;
           width: 100px;
           display: flex;
           justify-content: space-around;
+          position: relative;
+        }
+        & .section_circle {
+          margin: 20px 0 0 60px;
         }
         & ul .menu-items {
           width: 200px;
           height: 100px;
+          right: 230px;
           display: flex;
           justify-content: space-around;
+          position: absolute;
           & li {
             width: 150px;
           }
         }
-       
       }
       .section_bar .open > span {
         display: none;
@@ -414,6 +423,16 @@ figcaption {
     }
     & .about {
       grid-area: about;
+      display: flex;
+      &_block{
+        flex-basis: 30%;
+
+      }
+      & .block_loop {
+        flex-basis: 70%;
+        max-width: 500px;
+      }
+
     }
 
     & main {
