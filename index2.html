@@ -27,6 +27,7 @@
     <meta name="theme-color" content="#ffffff" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.pause@3.0.3/jquery.pause.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function () {
         loop_slide("up");
@@ -91,6 +92,34 @@
             }
           });
         }
+      });
+    </script>
+    <script>
+      function checkWindowSize() {
+        var blockTour = document.querySelector(".block_tour");
+
+        if (window.innerWidth >= 1260) {
+          blockTour.classList.add("carousel");
+          Array.from(blockTour.children).forEach(function (child) {
+            child.classList.add("carousel_slide");
+          });
+        } else {
+          blockTour.classList.remove("carousel");
+          Array.from(blockTour.children).forEach(function (child) {
+            child.classList.remove("carousel_slide");
+          });
+        }
+      }
+
+      window.addEventListener("resize", checkWindowSize);
+      window.addEventListener("DOMContentLoaded", checkWindowSize);
+    </script>
+    <script>
+      $(document).ready(function () {
+        $(".carousel").slick({
+          autoplay: true,
+          slidesToShow: 1,
+        });
       });
     </script>
   </head>
@@ -229,45 +258,50 @@
             </ul>
             <p>終了</p>
           </div>
-          <div class="block_attention">
-            <p class="title">注意事項</p>
-            <p>
-              天候条件:
-              <br />星空観察には天候が影響します。曇りや雨天時は星空が見えにくいため、天候予報を確認しツアーの可否を判断しましょう。急な天候変化に備え、傘やレインコートを持参することもおすすめです。<br />
+          <div class="block_attention_eyecatch1">
+            <div class="block_attention">
+              <p class="title">注意事項</p>
+              <p>
+                天候条件:
+                <br />星空観察には天候が影響します。曇りや雨天時は星空が見えにくいため、天候予報を確認しツアーの可否を判断しましょう。急な天候変化に備え、傘やレインコートを持参することもおすすめです。<br />
 
-              <br />ガイドの指示と環境保護:<br />
-              ツアーガイドの指示に従い、安全と観察ポイントに注意しましょう。明るい光やフラッシュの使用を避け、カメラや望遠鏡の使用時には他の参加者と配慮しましょう。自然環境への配慮も重要であり、ごみは持ち帰り、動植物に触れないようにしましょう。
-            </p>
+                <br />ガイドの指示と環境保護:<br />
+                ツアーガイドの指示に従い、安全と観察ポイントに注意しましょう。明るい光やフラッシュの使用を避け、カメラや望遠鏡の使用時には他の参加者と配慮しましょう。自然環境への配慮も重要であり、ごみは持ち帰り、動植物に触れないようにしましょう。
+              </p>
+            </div>
+            <figure class="eyecatch_1">
+              <img src="image/23464837.jpg" alt="夕日と望遠鏡を覗く少女" />
+            </figure>
           </div>
-          <figure class="eyecatch_1">
-            <img src="image/23464837.jpg" alt="夕日と望遠鏡を覗く少女" />
-          </figure>
-          <div class="block_clothing">
-            <p class="title">服装・靴</p>
-            <p>
-              季節や気候に合わせた暖かく動きやすい服装と、歩きやすい靴、防寒具、虫除けスプレーなどの準備がおすすめです。
-            </p>
+          <div class="block_clothing_eyecatch2">
+            <div class="block_clothing">
+              <p class="title">服装・靴</p>
+              <p>
+                季節や気候に合わせた暖かく動きやすい服装と、歩きやすい靴、防寒具、虫除けスプレーなどの準備がおすすめです。
+              </p>
+            </div>
+            <figure class="eyecatch_2">
+              <img src="image/justin-main-UBbvKkbAClE-unsplash.jpg"
+              alt=靴のイメージ">
+            </figure>
           </div>
-          <figure class="eyecatch_2">
-            <img src="image/justin-main-UBbvKkbAClE-unsplash.jpg"
-            alt=靴のイメージ">
-          </figure>
-          <div class="block_cancel">
-            <p class="title">キャンセル</p>
-            <p>
-              キャンセルに関するご案内：
-              星空ツアーのご参加をキャンセルされる場合のキャンセル料については、以下の通りです。<br />
-              <br />
-              ツアー開始日の3日前までのキャンセル：全額返金<br />
-              ツアー開始日の2日前までのキャンセル：参加費の50％がキャンセル料として発生<br />
-              ツアー開始日の前日以降のキャンセル：参加費の100％がキャンセル料として発生<br /><br />
-              なお、天候や不可抗力によるツアーの中止については、全額返金させていただきます。ご不明な点やキャンセルに関するご連絡は、お手数ですがお問い合わせページよりご連絡ください。ご理解とご協力をお願いいたします。
-            </p>
+          <div class="block_cancel_eyecatch3">
+            <div class="block_cancel">
+              <p class="title">キャンセル</p>
+              <p>
+                キャンセルに関するご案内：
+                星空ツアーのご参加をキャンセルされる場合のキャンセル料については、以下の通りです。<br />
+                <br />
+                ツアー開始日の3日前までのキャンセル：全額返金<br />
+                ツアー開始日の2日前までのキャンセル：参加費の50％がキャンセル料として発生<br />
+                ツアー開始日の前日以降のキャンセル：参加費の100％がキャンセル料として発生<br /><br />
+                なお、天候や不可抗力によるツアーの中止については、全額返金させていただきます。ご不明な点やキャンセルに関するご連絡は、お手数ですがお問い合わせページよりご連絡ください。ご理解とご協力をお願いいたします。
+              </p>
+            </div>
+            <figure class="eyecatch_3">
+              <img src="image/22987497.png" alt="望遠鏡" />
+            </figure>
           </div>
-          <figure class="eyecatch_3">
-            <img src="image/22987497.png" alt="望遠鏡" />
-          </figure>
-
           <div class="block_finish">
             <p class="title">最後に</p>
             <p>
@@ -321,15 +355,19 @@
           <p class="title">FAQ</p>
         </div>
         <div class="block_contact">
-          <a href="contact.html" ><p class="title">Contact</p></a>
+          <a href="contact.html"><p class="title">Contact</p></a>
         </div>
         <footer>
           <figure>
-           <a href="https://www.instagram.com/"> <img src="image/icons8-インスタグラム-64.png" alt="" /></a>
+            <a href="https://www.instagram.com/">
+              <img src="image/icons8-インスタグラム-64.png" alt=""
+            /></a>
           </figure>
 
           <figure>
-            <a href="https://twitter.com/?lang=ja"><img src="image/icons8-ツイッター-50 (2).png" alt="" /></a>
+            <a href="https://twitter.com/?lang=ja"
+              ><img src="image/icons8-ツイッター-50 (2).png" alt=""
+            /></a>
           </figure>
         </footer>
         <div class="figcaption">
