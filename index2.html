@@ -11,6 +11,7 @@
       sizes="180x180"
       href="image/apple-touch-icon.png"
     />
+
     <link
       rel="icon"
       type="image/png"
@@ -23,11 +24,26 @@
       sizes="16x16"
       href="image/favicon-16x16.png"
     />
+    <!-- slickのCSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+      integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+      integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.pause@3.0.3/jquery.pause.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
       $(document).ready(function () {
         loop_slide("up");
@@ -101,12 +117,12 @@
         if (window.innerWidth >= 1260) {
           blockTour.classList.add("carousel");
           Array.from(blockTour.children).forEach(function (child) {
-            child.classList.add("carousel_slide");
+            child.classList.add("slide");
           });
         } else {
           blockTour.classList.remove("carousel");
           Array.from(blockTour.children).forEach(function (child) {
-            child.classList.remove("carousel_slide");
+            child.classList.remove("slide");
           });
         }
       }
@@ -116,13 +132,15 @@
     </script>
     <script>
       $(document).ready(function () {
-        $(".carousel").slick({
+        $(".block_tour.carousel").slick({
           autoplay: true,
+          dots: true,
           slidesToShow: 1,
         });
       });
     </script>
   </head>
+
   <body>
     <div class="content">
       <section>
@@ -390,5 +408,20 @@
         </div>
       </div>
     </div>
+    <!-- jQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+      integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- slickのJavaScript -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+      integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </body>
 </html>
