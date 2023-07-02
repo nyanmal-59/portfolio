@@ -386,6 +386,7 @@ figcaption a {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: -7.5em;
   }
   .content {
     display: grid;
